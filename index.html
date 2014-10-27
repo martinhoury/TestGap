@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="width=device-width,minimum-scale=1, maximum-scale=1" name="viewport">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.css" />
+<script src="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.js"></script>
+
+<title>Where am I ?</title>
+</head>
+
+<body>
+<div Data-role="page">
+    <div data-role="header" style="overflow:hidden;">
+    <h1>Where am I ?</h1>
+    </div>
+    
+    <div data-role="content">
+    	<div data-role="collapsible-set" data-theme="c" data-content-theme="d">
+            <div data-role="collapsible">
+                <h3>Localisation</h3>
+                <div id="localisation">
+        		</div>
+            </div>
+            <div data-role="collapsible">
+                <h3>Acceleration</h3>
+                <div id="acceleration">
+                  <table>
+                    <tr>
+                      <td>Event Supported</td>
+                      <td id="doEvent"></td>
+                    </tr>
+                    <tr>
+                      <td>Tilt Left/Right [gamma]</td>
+                      <td id="doTiltLR"></td>
+                    </tr>
+                    <tr>
+                      <td>Tilt Front/Back [beta]</td>
+                      <td id="doTiltFB"></td>
+                    </tr>
+                    <tr>
+                      <td>Direction [alpha]</td>
+                      <td id="doDirection"></td>
+                    </tr>
+                   </table>
+                   <div class="container" style="perspective: 300;">
+                      <img src="lara.jpg" id="imgLogo" align="middle" size="150x150" class="logo">
+                   </div>       
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+    
+<script type="text/javascript" src="localacc.js"></script>
+</body>
+</html>
