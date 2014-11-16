@@ -19,7 +19,17 @@
             mapOptions);
       }
       google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
+
+      if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(function(position) {
+				var infopos= "<h2>Position déterminée<br></h2>";
+				infopos+= "Latitude : "+position.coords.latitude+"<br>";
+				infopos+= "Longitude: "+position.coords.longitude+"<br>";
+				infopos+= "Altitude : "+position.coords.altitude+"<br>";
+				document.getElementById("localisation").innerHTML= infopos;
+			});
+		}
+		</script>
   </head>
   <body>
   	<div Data-role="page">
@@ -30,9 +40,9 @@
     <div data-role="content">
     	<div data-role="collapsible-set" data-theme="c" data-content-theme="d">
             <div data-role="collapsible">
-          	<h3>Localisation</h3>
-          	<div id="localisation">
-    		</div>
+	          	<h3>Localisation</h3>
+	          	<div id="localisation">
+	    		</div>
             </div>
             
       	</div>
@@ -40,8 +50,21 @@
         
 	    </div>
 	</div>
-	    
-	<script type="text/javascript" src="localacc.js"></script>
+	<script type="text/javascript">
+      document.getElementById("localisation").innerHTML= "coucou";
+      if (navigator.geolocation) {
+      		document.getElementById("localisation").innerHTML= "caca";
+			navigator.geolocation.getCurrentPosition(function(position) {
+				document.getElementById("localisation").innerHTML= "dede";
+				var infopos= "<h2>Position déterminée<br></h2>";
+				infopos+= "Latitude : "+position.coords.latitude+"<br>";
+				infopos+= "Longitude: "+position.coords.longitude+"<br>";
+				infopos+= "Altitude : "+position.coords.altitude+"<br>";
+				document.getElementById("localisation").innerHTML= infopos;
+			});
+		}
+	</script>
+	
 	<div id="map-canvas"></div>
  </body>
 </html>
