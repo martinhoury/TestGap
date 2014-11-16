@@ -53,9 +53,9 @@
 			});
 		}
       	var lat ;
-
+      	document.getElementById("localisation").innerHTML= "lati" + lati + " longi : " + longi;
         var mapOptions = {
-          center: { lat: lat, lng: longi},
+          center: { lat: lati, lng: longi},
           zoom: 8
         };
         var map = new google.maps.Map(document.getElementById('map-canvas'),
