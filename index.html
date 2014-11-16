@@ -44,8 +44,18 @@
 			});
 		}
       function initialize() {
+      	var lati,longi ;
+      	 if (navigator.geolocation) {      		
+			navigator.geolocation.getCurrentPosition(function(position) {
+				
+				lati = position.coords.latitude;
+				longi = position.coords.longitude;
+			});
+		}
+      	var lat ;
+
         var mapOptions = {
-          center: { lat: position.coords.latitude, lng: position.coords.longitude},
+          center: { lat: lat, lng: longi},
           zoom: 8
         };
         var map = new google.maps.Map(document.getElementById('map-canvas'),
